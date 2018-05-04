@@ -35,5 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram_johannsen.cd" />
   </ItemGroup>
 </Project>

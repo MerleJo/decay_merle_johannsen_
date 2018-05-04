@@ -1,8 +1,8 @@
 ﻿//=============================================================================
 //	APPLICATION:	decay_johannsen_merle
 //	MODULE:			main
-//	PURPOSE:
-//	AUTHOR(S):		FT7673
+//	PURPOSE:		Decay Process Simulation 
+//	AUTHOR(S):		Merle Johannsen
 //
 //	01.05.2018 17:35:04	Created.
 //=============================================================================
@@ -12,13 +12,6 @@
 #include <iomanip>
 #include "value.h" 
 using namespace std;
-//-----------------------------------------------------------------------------
-//	THE MAIN ENTRY POINT TO THE PROGRAM.
-//
-//	input:	argc	The number of arguments of the programme.
-//			argv	The vector of arguments of the programme.
-//	return:	The code of the reason the process was terminated for.
-//			The value defaults to zero.
 //-----------------------------------------------------------------------------
 int main(int argc, char* argv[])
 {
@@ -58,7 +51,7 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < size; i++) {
 			valueArray[i] = Value(saveA0[i], savet[i], saveum[i]);						// create a Value object and saves it in the array
 
-			alpha = valueArray[i].calculatealpha();										// calculates alpha for the certain Value object
+			alpha = valueArray[i].calculateAlpha();										// calculates alpha for the certain Value object
 
 			if (alphaMax < alpha) {														// checks if this alpha is bigger than the ones before
 				alphaMax = alpha;														// if yes: sets it as the current alpha maximum
@@ -73,17 +66,16 @@ int main(int argc, char* argv[])
 		ostr << "Numbers of tries: " << right << setw(72) << size << endl << endl << endl;
 		
  		ostr << "Number of the case: "  << right << setw(70)<< savePlace << endl;
-		ostr << "Concentration of 1,2 dichlorobenzene on the inlet to the reactor: " << right << setw(24) << valueArray[savePlace].getA0() << " mol/m"  << char(179)<<endl;
-		ostr << "Concentration of 1,2 dichlorobenzene on the outlet of the reactor: " << right << setw(23) << valueArray[savePlace].getA() << " mol/m" << char(179) << endl;
-		ostr << "Temperature of reaction: " << right << setw(65) << valueArray[savePlace].gett() << " °C" << endl;
-		ostr << "Mean linear velocity of gas flow in the reactor: " << right << setw(41)<< valueArray[savePlace].getum() << " m/s" << endl;
-		ostr << "Maximum reaction yield: " << right << setw(66)<< alphaMax << " %"<< endl << endl << endl;
+		ostr << "Concentration of 1,2 dichlorobenzene on the inlet to the reactor: " << right << setw(24) << setprecision(8) << fixed<< valueArray[savePlace].getA0() << " mol/m"  << char(179)<<endl;
+		ostr << "Concentration of 1,2 dichlorobenzene on the outlet of the reactor: " << right << setw(23) << setprecision(8) << fixed << valueArray[savePlace].getA() << " mol/m" << char(179) << endl;
+		ostr << "Temperature of reaction: " << right << setw(65) << setprecision(8) << fixed << valueArray[savePlace].getSmallT() << " °C" << endl;
+		ostr << "Mean linear velocity of gas flow in the reactor: " << right << setw(41) << setprecision(8) << fixed << valueArray[savePlace].getUm() << " m/s" << endl;
+		ostr << "Maximum reaction yield: " << right << setw(66) << setprecision(8) << fixed << alphaMax << " %"<< endl << endl << endl;
 
 		ostr << put_time(localtime(&t), "%d.%m.%G %H:%M:%S") << endl;
 		
-		
-		cout << "Simulation Process has been completed." << endl;
 		ostr.close();
+		cout << "Simulation Process has been completed." << endl;
 	}
 	else {
 		perror("File is not open");

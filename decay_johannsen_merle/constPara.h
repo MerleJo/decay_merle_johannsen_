@@ -4,25 +4,25 @@ class ConstPara
 public:
 	ConstPara();
 	
-	double getLcb() { return Lcb; };
-	double getLcc() { return Lcc; };
-	double getR() { return R; };
+	double getLcb() { return lcb; };
+	double getLcc() { return lcc; };
+	double getR() { return r; };
 
-	int getNcl() { return Ncl; };
-	int geta() { return a; };
+	int getNcl() { return ncl; };
+	int getSmallA() { return a; };
 
 	int getk0() { return k0; };
-	int getE() { return E; };
+	int getE() { return bigE; };
 
 private:
 	
-	double Lcb;							// Length of catalyst’s block				[m]
-	double Lcc;							// Length of catalyst’s channel				[m]
-	double R;							// Universal gas constant					[J/mol/K]
-	int Ncl;							// Number of catalyst layers of reactor bed
+	double lcb;							// Length of catalyst’s block				[m]
+	double lcc;							// Length of catalyst’s channel				[m]
+	double r;							// Universal gas constant					[J/mol/K]
+	int ncl;							// Number of catalyst layers of reactor bed
 	int a;								// Specific surface of the catalyst			[m^2/m^3]
 
 	int k0;								// Pre-exponential factor in Arrhenius Law
-	int E;								// Activation energy						[J/mol]
+	int bigE;							// Activation energy						[J/mol]
 };
 

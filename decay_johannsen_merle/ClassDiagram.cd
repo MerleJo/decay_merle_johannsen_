@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="ConstPara">
-    <Position X="2" Y="3.5" Width="1.5" />
+    <Position X="1" Y="1.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAKAAAAAAAgAAAAAAgAAAAIoAAgQI=</HashCode>
+      <HashCode>AACBAgQAAAAAAABAKAAAAAAAgAAAAAAgAAABAIAAAQI=</HashCode>
       <FileName>constPara.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Value">
-    <Position X="5" Y="3.5" Width="2.25" />
+    <Position X="4.5" Y="1.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAgAAEAQABAgAAAAAAAAAAIAABgQQwIAAMACA=</HashCode>
+      <HashCode>ACgAAAQAAAECAQAABIAEIAAAAAEAAAAAgQQ0AAAAACA=</HashCode>
       <FileName>value.h</FileName>
     </TypeIdentifier>
   </Class>
